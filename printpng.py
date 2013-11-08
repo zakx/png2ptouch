@@ -60,8 +60,7 @@ def linefeed(count=0):
 	output += "\x1A"
 	return output
 
-def print_image(printer, filename):
-	image = Image.open(filename)
+def print_image(printer, image):
 	data = process_image(image)
 
 	fd = open("pyimage.txt", "w")
@@ -81,4 +80,6 @@ if __name__ == "__main__":
 	parser.add_argument('image', type=str, help='Filename of a PNG image')
 
 	args = parser.parse_args()
-	print_image(printer=args.printer, filename=args.image)
+
+	image = Image.open(args.image)
+	print_image(printer=args.printer, image=image)
