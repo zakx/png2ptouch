@@ -26,7 +26,6 @@ INIT_PRINTER = "\x1B@\x1BiS\x1BiR\x01"
 def process_image(image):
 	image = image.rotate(270)
 	image = image.convert('L') # convert to BW
-	image.save("tmp.png")
 	width, height = image.size
 	output = str()
 
@@ -62,10 +61,6 @@ def linefeed(count=0):
 
 def print_image(printer, image):
 	data = process_image(image)
-
-	fd = open("pyimage.txt", "w")
-	fd.write(data)
-	fd.close()
 
 	lpr =  subprocess.Popen(["/usr/bin/lpr", "-P", printer], \
 							stdin=subprocess.PIPE)
