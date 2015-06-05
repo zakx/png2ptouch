@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # printpng.py -- part of png2ptouch
 # https://github.com/zakx/png2ptouch
