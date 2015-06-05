@@ -69,7 +69,7 @@ def print_image(printer, image):
 	lpr.stdin.write(linefeed(1))
 	print("Sent data to printer.")
 
-if __name__ == "__main__":
+def main():
 	parser = argparse.ArgumentParser(description='Print a PNG file on a Brother P-Touch 2430 PC')
 	parser.add_argument('-p', '--printer', type=str, help='CUPS name of the printer', required=True)
 	parser.add_argument('image', type=str, help='Filename of a PNG image')
@@ -78,3 +78,6 @@ if __name__ == "__main__":
 
 	image = Image.open(args.image)
 	print_image(printer=args.printer, image=image)
+
+if __name__ == "__main__":
+	main()
