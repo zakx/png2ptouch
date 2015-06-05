@@ -32,5 +32,5 @@ setup(
 	name="png2ptouch",
     py_modules=['printpng'],
 	url="https://github.com/zakx/png2ptouch",
-	version="0.1.0",
+	version="1.2",
 )
